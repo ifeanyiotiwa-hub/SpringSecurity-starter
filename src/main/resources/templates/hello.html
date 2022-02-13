@@ -6,6 +6,9 @@
         <title>Hello Spring Security!</title>
     </head>
     <body>
-        <h1>Hello Security! World</h1>
+        <h1 th:inline="text">Hello Security! World[[${#httpServletRequest.remoteUser}]]!</h1>
+    <form th:action="@{/logout}" method="post">
+        <input type="submit" value="Sign Out"/>
+    </form>
     </body>
 </html>
